@@ -1,0 +1,325 @@
+<!--
+Author: De Leon, Kim Alyson R.
+Section: CS - 201
+Activity: Final Website - Pablo Coffee
+Date: October 18, 2024
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pablo Coffee serves a diverse selection of premium coffees, delicious sandwiches, and mouth-watering desserts for every coffee lover.">
+    <meta name="keywords" content="Pablo Coffee, coffee, sandwiches, desserts, premium coffee">
+    <meta property="og:title" content="Pablo Coffee">
+    <meta property="og:description" content="Indulge in our delightful coffees and tasty food at Pablo Coffee. Explore our menu for premium coffee, fresh sandwiches, and exquisite desserts.">
+    <link href="https://fonts.googleapis.com/css?family=Inter" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/logos/logo.png" type="image/png">
+    <title>Menu - Pablo Coffee</title>
+    <link rel="stylesheet" href="css/styles.css"> 
+
+    <style>
+    /* Modal Styles */
+    .modal {
+        display: none; 
+        position: fixed; 
+        z-index: 1; 
+        left: 0;
+        top: 0;
+        width: 100%; 
+        height: 100%; 
+        overflow: auto; 
+        background-color: rgba(0, 0, 0, 0.7); 
+        padding-top: 60px; 
+        transition: opacity 0.3s ease; 
+    }
+    
+    .modal-content {
+        background-color: var(--accent-color); 
+        margin: 5% auto; 
+        padding: 20px;
+        border: 2px solid var(--primary-color); 
+        width: 80%; 
+        border-radius: 15px; 
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); 
+        animation: fadeIn 0.5s; 
+        transition: transform 0.3s ease; 
+    }
+    
+    .close {
+        color: var(--primary-color); 
+        float: right;
+        font-size: 30px; 
+        font-weight: bold;
+        transition: color 0.3s; 
+    }
+
+    .close:hover,
+    .close:focus {
+        color: var(--secondary-color); 
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    h2 {
+        color: var(--primary-color); 
+        margin: 0; 
+        font-family: 'Inter', sans-serif; 
+    }
+    
+    p {
+        color: #4C2A1D; 
+        line-height: 1.6; 
+        font-family: 'Inter', sans-serif; 
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+</style>
+
+</head>
+<body>
+
+    <!-- Navbar -->
+<header>
+    <div class="navbar">
+        <div class="logo">
+            <img src="images/logos/logo.png" alt="Pablo Coffee Logo" loading="lazy">
+        </div>
+
+        <!-- Hamburger Menu Button -->
+        <div class="hamburger" id="hamburger">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+
+        <nav>
+            <ul id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+    <h1 class="menu-header">Menu/Drinks</h1>
+    <h2 class="menu-drinks">Iced Coffee</h2>
+
+    <section class="menu" id="iced">
+        <div class="menu-item" onclick="openModal('Cold Foam Iced Espresso', 'A smooth iced espresso topped with creamy cold foam.', 'Best paired with: Classic Chocolate Cake')">
+            <img src="images/iced-espresso/IESP_ColdFoamIcedEspresso-removebg-preview.png" alt="Cold Foam Iced Espresso">
+            <h2>Cold Foam Iced Espresso</h2>
+        </div>
+
+        <div class="menu-item" onclick="openModal('Iced Cappuccino', 'A classic iced cappuccino made with espresso and milk.', 'Best paired with: Ham and Cheese Toastie')">
+            <img src="images/iced-espresso/IESP_IcedCappuccino-removebg-preview.png" alt="Iced Cappuccino">
+            <h2>Iced Cappuccino</h2>
+        </div>
+
+        <div class="menu-item" onclick="openModal('Dark Caramel Nitro Cold Brew', 'Rich and creamy Nitro Cold Brew with a hint of caramel.', 'Best paired with: Classic Chocolate Cake')">
+            <img src="images/iced-espresso/CBRE_DarkCaramelNitroColdBrew-removebg-preview.png" alt="Dark Caramel Nitro Cold Brew">
+            <h2>Dark Caramel Nitro Cold Brew</h2>
+        </div>
+
+        <div class="menu-item" onclick="openModal('Nitro Vanilla Sweet Cream Cold Brew', 'Smooth Nitro Cold Brew with sweet vanilla cream.', 'Best paired with: Blueberry Cheesecake')">
+            <img src="images/iced-espresso/CBRE_NitroVanillaSweetCreamColdBrew-removebg-preview.png" alt="Nitro Vanilla Sweet Cream Cold Brew">
+            <h2>Nitro Vanilla Sweet Cream Cold Brew</h2>
+        </div>
+
+        <div class="menu-item" onclick="openModal('Salted Caramel Cold Brew', 'Refreshing cold brew with salted caramel flavor.', 'Best paired with: Banoffee Pie')">
+            <img src="images/iced-espresso/CBRE_SaltedCaramelColdBrew-removebg-preview.png" alt="Salted Caramel Cold Brew">
+            <h2>Salted Caramel Cold Brew</h2>
+        </div>
+
+        <div class="menu-item" onclick="openModal('Vanilla Sweet Cream Cold Brew', 'Classic cold brew with rich vanilla sweet cream.', 'Best paired with: New York Cheesecake')">
+            <img src="images/iced-espresso/CBRE_VanillaSweetCreamColdBrew-removebg-preview.png" alt="Vanilla Sweet Cream Cold Brew">
+            <h2>Vanilla Sweet Cream Cold Brew</h2>
+        </div>
+
+        <div class="menu-item" onclick="openModal('Nitro Cold Brew', 'Smooth and refreshing Nitro Cold Brew.', 'Best paired with: Salmon Dill with Egg')">
+            <img src="images/iced-espresso/CBRE_NitroColdBrew-removebg-preview.png" alt="Nitro Cold Brew">
+            <h2>Nitro Cold Brew</h2>
+        </div>
+
+        <div class="menu-item" onclick="openModal('Iced Americano', 'Bold and rich iced Americano.', 'Best paired with: Patty Melt')">
+            <img src="images/iced-espresso/IESP_IcedAmericano-removebg-preview.png" alt="Iced Americano">
+            <h2>Iced Americano</h2>
+        </div>
+
+        <div class="menu-item" onclick="openModal('Iced Caffe Latte', 'Creamy iced latte made with espresso and milk.', 'Best paired with: Ratatouille')">
+            <img src="images/iced-espresso/IESP_IcedCaffeLatte-removebg-preview.png" alt="Iced Caffe Latte">
+            <h2>Iced Caffe Latte</h2>
+        </div>
+
+        <div class="menu-item" onclick="openModal('Iced Caffe Mocha', 'Rich chocolatey iced mocha with espresso.', 'Best paired with: Classic Chocolate Cake')">
+            <img src="images/iced-espresso/IESP_IcedCaffeMocha-removebg-preview.png" alt="Iced Caffe Mocha">
+            <h2>Iced Caffe Mocha</h2>
+        </div>
+
+        <div class="menu-item" onclick="openModal('Iced Caramel Macchiato', 'Iced caramel macchiato with espresso and milk.', 'Best paired with: Blueberry Cheesecake')">
+            <img src="images/iced-espresso/IESP_IcedCaramelMacchiato-removebg-preview.png" alt="Iced Caramel Macchiato">
+            <h2>Iced Caramel Macchiato</h2>
+        </div>
+
+        <div class="menu-item" onclick="openModal('Salted Maple Oatmilk Iced Shaken Espresso', 'A delightful iced shaken espresso with salted maple oat milk.', 'Best paired with: New York Cheesecake')">
+            <img src="images/iced-espresso/Salted Maple Oatmilk Iced Shaken Espresso.png" alt="Salted Maple Oatmilk Iced Shaken Espresso">
+            <h2>Salted Maple Oatmilk Iced Shaken Espresso</h2>
+        </div>
+    </section>
+
+    <h1 class="menu-header">Menu/Drinks</h1>
+    <h2 class="menu-drinks">Hot Coffee</h2>
+
+    <section class="menu" id="hot">
+        <div class="menu-item" onclick="openModal('Hot Brewed Coffee', 'Freshly brewed hot coffee for a classic taste.', 'Best paired with: Ham and Cheese Toastie')">
+            <img src="images/hot-espresso/HBRE_HotBrewedCoffee-removebg-preview.png" alt="Hot Brewed Coffee">
+            <h2>Hot Brewed Coffee</h2>
+        </div>
+
+        <div class="menu-item" onclick="openModal('Caffe Misto', 'A comforting mix of brewed coffee and steamed milk.', 'Best paired with: Banoffee Pie')">
+            <img src="images/hot-espresso/HESP_CaffeMisto-removebg-preview.png" alt="Caffe Misto">
+            <h2>Caffe Misto</h2>
+        </div>
+
+        <div class="menu-item" onclick="openModal('Flat White', 'A rich and velvety blend of double espresso and microfoamed milk, offering a smooth and creamy coffee experience.', 'Best paired with: Ratatouille')">
+            <img src="images/hot-espresso/HESP_FlatWhite-removebg-preview.png" alt="Flat White">
+            <h2>Flat White</h2>
+        </div>
+
+        <div class="menu-item" onclick="openModal('Espresso Con Panna', 'A shot of espresso topped with whipped cream.', 'Best paired with: Classic Chocolate Cake')">
+            <img src="images/hot-espresso/HESP_EspressoConPanna-removebg-preview.png" alt="Espresso Con Panna">
+            <h2>Espresso Con Panna</h2>
+        </div>
+
+        <div class="menu-item" onclick="openModal('Espresso Macchiato', 'A shot of espresso with a touch of foam.', 'Best paired with: Blueberry Cheesecake')">
+            <img src="images/hot-espresso/HESP_EspressoMacchiato-removebg-preview.png" alt="Espresso Macchiato">
+            <h2>Espresso Macchiato</h2>
+        </div>
+
+        <div class="menu-item" onclick="openModal('Espresso', 'Rich and bold espresso shot.', 'Best paired with: Nitro Vanilla Sweet Cream Cold Brew')">
+            <img src="images/hot-espresso/HESP_Espresso-removebg-preview.png" alt="Espresso">
+            <h2>Espresso</h2>
+        </div>
+    </section>
+
+    <h1 class="menu-header">Menu/Sandwich</h1>
+    <h2 class="menu-drinks">Sandwiches</h2>
+
+    <section class="menu" id="sandwich">
+        <div class="menu-item" onclick="openModal('Ham and Cheese Toastie', 'A classic ham and cheese sandwich, toasted to perfection.', 'Best paired with: Hot Brewed Coffee')">
+            <img src="images/sandwiches/HamandCheeseToastie-removebg-preview.png" alt="Ham and Cheese Toastie">
+            <h2>Ham and Cheese Toastie</h2>
+        </div>
+
+        <div class="menu-item" onclick="openModal('Patty Melt', 'Juicy burger patty melted with cheese on bread.', 'Best paired with: Iced Caffe Latte')">
+            <img src="images/sandwiches/PattyMelt-removebg-preview.png" alt="Patty Melt">
+            <h2>Patty Melt</h2>
+        </div>
+
+        <div class="menu-item" onclick="openModal('Chicken Barbecue', 'Grilled chicken with barbecue sauce.', 'Best paired with: Nitro Cold Brew')">
+            <img src="images/sandwiches/ChickenBarbecue-removebg-preview.png" alt="Chicken Barbecue">
+            <h2>Chicken Barbecue</h2>
+        </div>
+
+        <div class="menu-item" onclick="openModal('Roasted Chicken Pesto and Shitake Mushroom Flat Bread', 'A delightful flatbread topped with roasted chicken and pesto.', 'Best paired with: Caffe Misto')">
+            <img src="images/sandwiches/RoastedChickenPestoandShitakeMushroomonFlatBread-removebg-preview.png" alt="Roasted Chicken Pesto and Shitake Mushroom Flat Bread">
+            <h2>Roasted Chicken Pesto and Shitake Mushroom Flat Bread</h2>
+        </div>
+
+        <div class="menu-item" onclick="openModal('Ratatouille', 'Vegetable ratatouille, a classic French dish.', 'Best paired with: Flat White')">
+            <img src="images/sandwiches/Ratatouille.png" alt="Ratatouille">
+            <h2>Ratatouille</h2>
+        </div>
+
+        <div class="menu-item" onclick="openModal('Salmon Dill with Egg', 'Savory salmon with dill and egg on a sandwich.', 'Best paired with: Hot Brewed Coffee')">
+            <img src="images/sandwiches/SalmonDillwithegg-removebg-preview.png" alt="Salmon Dill with Egg">
+            <h2>Salmon Dill with Egg</h2>
+        </div>
+    </section>
+
+    <h1 class="menu-header">Menu/Dessert</h1>
+    <h2 class="menu-drinks">Desserts</h2>
+
+    <section class="menu" id="dessert">
+        <div class="menu-item" onclick="openModal('Banoffee Pie', 'A delicious combination of banana and toffee in a pie.', 'Best paired with: Iced Caffe Mocha')">
+            <img src="images/dessert/BanoffeePie-removebg-preview.png" alt="Banoffee Pie">
+            <h2>Banoffee Pie</h2>
+        </div>
+
+        <div class="menu-item" onclick="openModal('Blueberry Cheesecake', 'Creamy cheesecake with fresh blueberries.', 'Best paired with: Iced Cappuccino')">
+            <img src="images/dessert/BlueberryLiciousCheesecake-removebg-preview.png" alt="Blueberry Cheesecake">
+            <h2>Blueberry Cheesecake</h2>
+        </div>
+
+        <div class="menu-item" onclick="openModal('Classic Chocolate Cake', 'Rich chocolate cake with frosting.', 'Best paired with: Nitro Vanilla Sweet Cream Cold Brew')">
+            <img src="images/dessert/ClassicChocolateCake-removebg-preview.png" alt="Classic Chocolate Cake">
+            <h2>Classic Chocolate Cake</h2>
+        </div>
+
+        <div class="menu-item" onclick="openModal('New York Cheesecake', 'Classic cheesecake with a smooth texture.', 'Best paired with: Iced Americano')">
+            <img src="images/dessert/NewYorkCheesecake-removebg-preview.png" alt="New York Cheesecake">
+            <h2>New York Cheesecake</h2>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="itemTitle"></h2>
+            <p id="itemDescription"></p>
+            <p id="itemPairing"></p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Pablo Coffee. All Rights Reserved. Created by Kim Alyson De Leon</p>
+            <div class="social-media">
+                <a href="https://www.facebook.com/pablo.coffeee" target="_blank" rel="noopener noreferrer" aria-label="Pablo Coffee Facebook">
+                    <img src="images/logos/facebook-logo.jpg" alt="Facebook Logo" loading="lazy">
+                </a>
+                <a href="https://www.instagram.com/pablo.coffeee" target="_blank" rel="noopener noreferrer" aria-label="Pablo Coffee Instagram">
+                    <img src="images/logos/instagram-logo.jpg" alt="Instagram Logo" loading="lazy">
+                </a>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+        // Function to open modal
+        function openModal(title, description, pairing) {
+            document.getElementById("itemTitle").innerText = title;
+            document.getElementById("itemDescription").innerText = description;
+            document.getElementById("itemPairing").innerText = pairing;
+            document.getElementById("myModal").style.display = "block";
+        }
+
+        // Function to close modal
+        function closeModal() {
+            document.getElementById("myModal").style.display = "none";
+        }
+
+        // Close modal when clicking outside of the modal content
+        window.onclick = function(event) {
+            var modal = document.getElementById("myModal");
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+
+    <!-- Main JavaScript File -->
+    <script src="js/javascript.js"></script>
+</body>
+</html>

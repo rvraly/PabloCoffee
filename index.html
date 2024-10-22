@@ -1,0 +1,112 @@
+<!--
+Author: De Leon, Kim Alyson R.
+Section: CS - 201
+Activity: Final Website - Pablo Coffee
+Date: October 18, 2024
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pablo Coffee offers premium coffee, delicious sandwiches, and desserts for coffee lovers.">
+    <meta name="keywords" content="Pablo Coffee, coffee, sandwiches, desserts, premium coffee">
+    <meta property="og:title" content="Pablo Coffee">
+    <meta property="og:description" content="Enjoy delicious coffee and food at Pablo Coffee. Visit us for premium coffee, sandwiches, and desserts.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/logos/logo.png" type="image/png">
+    <title>Pablo Coffee</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <img src="images/logos/logo.png" alt="Pablo Coffee Logo" loading="lazy">
+            </div>
+
+            <!-- Hamburger Menu Button -->
+            <div class="hamburger" id="hamburger">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+
+            <nav aria-label="Main Navigation">
+                <ul id="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="pabloheader">
+            <video controls poster="media/header.png" alt="picture with tagline. Need Coffee? Grab it @ Pablo!" style="width: 100%; height: auto;">
+                <source src="media/CoffeeReels.mp4" type="video/mp4">
+                <source src="media/CoffeeReels.webm" type="video/webm">
+                <track src="media/captions.vtt" kind="subtitles" srclang="en-us" label="English">
+                <p>Your browser does not support the video element.</p>
+            </video>
+        </section>
+
+        <!-- Menu Section -->
+        <section id="menu" class="menu">
+            <div class="menu-item">
+                <a href="menu.html#iced" aria-label="Iced Coffee Menu">
+                    <h2>Iced Coffee</h2>
+                    <img src="images/iced-espresso/IESP_IcedCaffeMocha-removebg-preview.png" alt="Iced Coffee" loading="lazy">
+                    <p>Refreshing iced coffee made with premium beans.</p>
+                </a>
+            </div>
+            <div class="menu-item">
+                <a href="menu.html#hot" aria-label="Hot Coffee Menu">
+                    <h2>Hot Coffee</h2>
+                    <img src="images/hot-espresso/HESP_FlatWhite-removebg-preview.png" alt="Hot Coffee" loading="lazy">
+                    <p>Rich and aromatic hot coffee brewed to perfection.</p>
+                </a>
+            </div>
+            <div class="menu-item">
+                <a href="menu.html#sandwich" aria-label="Sandwiches Menu">
+                    <h2>Sandwiches</h2>
+                    <img src="images/sandwiches/HamandCheeseToastie-removebg-preview.png" alt="Ham and Cheese Sandwich" loading="lazy">
+                    <p>Delicious ham and cheese sandwich, perfect for any time of the day.</p>
+                </a>
+            </div>
+            <div class="menu-item">
+                <a href="menu.html#dessert" aria-label="Dessert Menu">
+                    <h2>Dessert</h2>
+                    <img src="images/dessert/ClassicChocolateCake-removebg-preview.png" alt="Slice of Classic Chocolate Cake" loading="lazy">
+                    <p>A delightful selection of desserts to satisfy your sweet cravings.</p>
+                </a>
+            </div>
+        </section>
+    </main>
+
+     <!-- Footer -->
+     <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Pablo Coffee. All Rights Reserved. Created by Kim Alyson De Leon</p>
+            <div class="social-media">
+                <a href="https://www.facebook.com/pablo.coffeee" target="_blank" rel="noopener noreferrer" aria-label="Pablo Coffee Facebook">
+                    <img src="images/logos/facebook-logo.jpg" alt="Facebook Logo" loading="lazy">
+                </a>
+                <a href="https://www.instagram.com/pablo.coffeee" target="_blank" rel="noopener noreferrer" aria-label="Pablo Coffee Instagram">
+                    <img src="images/logos/instagram-logo.jpg" alt="Instagram Logo" loading="lazy">
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main JavaScript File -->
+    <script src="js/javascript.js"></script>
+</body>
+</html>
